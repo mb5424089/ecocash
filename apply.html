@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apply | EcoCash Smart Lesotho</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap');
+        body { background-color: #f4f7fa; font-family: 'Plus Jakarta Sans', sans-serif; }
+        .smart-blue { background: linear-gradient(135deg, #1d4ed8 0%, #2563eb 100%); }
+        .card-shadow { box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.05); }
+        .spinner { border: 4px solid rgba(255, 255, 255, 0.3); border-radius: 50%; border-top: 4px solid #fff; width: 40px; height: 40px; animation: spin 1s linear infinite; }
+        @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+        .hidden { display: none; }
+    </style>
+</head>
+<body class="text-gray-900 pb-12">
+
+    <header class="p-6 text-center">
+        <h1 class="text-2xl font-extrabold tracking-tight">EcoCash <span class="text-blue-600">Smart</span></h1>
+    </header>
+
+    <main class="max-w-xl mx-auto px-5 w-full">
+        
+        <div id="application-card" class="bg-white rounded-[40px] p-8 card-shadow border border-white space-y-8">
+            <div class="text-center">
+                <h2 class="text-2xl font-extrabold text-gray-800">Quick Application</h2>
+                <p class="text-[10px] text-gray-400 font-bold uppercase tracking-[0.2em] mt-1">Kopo ea Kadimo ea Potlako</p>
+            </div>
+
+            <form id="loanForm" class="space-y-5">
+                <div class="space-y-4">
+                    <label class="block text-[10px] font-bold text-blue-600 uppercase tracking-widest ml-1">Personal Details</label>
+                    <div class="relative">
+                        <i class="fas fa-user absolute left-5 top-5 text-gray-300"></i>
+                        <input type="text" required placeholder="Full Legal Name" class="w-full p-4 pl-12 bg-gray-50 border border-gray-100 rounded-2xl outline-none focus:border-blue-500 focus:bg-white transition-all">
+                    </div>
+                    <div class="relative">
+                        <i class="fas fa-id-card absolute left-5 top-5 text-gray-300"></i>
+                        <input type="text" required placeholder="National ID Number" class="w-full p-4 pl-12 bg-gray-50 border border-gray-100 rounded-2xl outline-none focus:border-blue-500 focus:bg-white transition-all">
+                    </div>
+                </div>
+
+                <div class="space-y-4 pt-2">
+                    <label class="block text-[10px] font-bold text-blue-600 uppercase tracking-widest ml-1">Financial Information</label>
+                    <div class="relative">
+                        <i class="fas fa-wallet absolute left-5 top-5 text-gray-300"></i>
+                        <input type="number" required placeholder="Monthly Income (M)" class="w-full p-4 pl-12 bg-gray-50 border border-gray-100 rounded-2xl outline-none focus:border-blue-500 focus:bg-white transition-all">
+                    </div>
+                    <div class="relative">
+                        <i class="fas fa-money-bill-wave absolute left-5 top-5 text-gray-300"></i>
+                        <input type="number" required placeholder="Desired Loan Amount (M)" class="w-full p-4 pl-12 bg-gray-50 border border-gray-100 rounded-2xl outline-none focus:border-blue-500 focus:bg-white transition-all">
+                    </div>
+                    <div class="relative">
+                        <i class="fas fa-calendar-alt absolute left-5 top-5 text-gray-300"></i>
+
+<select required class="w-full p-4 pl-12 bg-gray-50 border border-gray-100 rounded-2xl outline-none focus:border-blue-500 focus:bg-white transition-all appearance-none">
+                            <option value="" disabled selected>Select Repayment Period</option>
+                            <option value="15">15 Days</option>
+                            <option value="30">30 Days (Recommended)</option>
+                            <option value="60">60 Days</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="space-y-4 pt-2">
+                    <label class="block text-[10px] font-bold text-blue-600 uppercase tracking-widest ml-1">Payout Method</label>
+                    <div class="relative">
+                        <i class="fas fa-mobile-alt absolute left-5 top-5 text-gray-300"></i>
+                        <input type="tel" required placeholder="EcoCash Number (+266)" class="w-full p-4 pl-12 bg-gray-50 border border-gray-100 rounded-2xl outline-none focus:border-blue-500 focus:bg-white transition-all">
+                    </div>
+                </div>
+
+                <button type="submit" class="w-full smart-blue text-white py-5 rounded-[25px] font-bold text-lg shadow-xl shadow-blue-200 hover:scale-[1.01] active:scale-95 transition-all mt-4">
+                    Submit Application
+                </button>
+            </form>
+
+            <div class="flex items-center justify-center gap-2 text-[10px] text-gray-400 font-bold uppercase">
+                <i class="fas fa-shield-check text-green-500"></i> Sireletseha le Sephiri
+            </div>
+        </div>
+
+        <div id="processing-state" class="hidden bg-white rounded-[40px] p-12 card-shadow text-center space-y-8">
+            <div class="flex justify-center">
+                <div class="w-20 h-20 smart-blue rounded-3xl flex items-center justify-center shadow-lg shadow-blue-200">
+                    <div class="spinner"></div>
+                </div>
+            </div>
+            <div class="space-y-3">
+                <h2 class="text-2xl font-extrabold text-gray-800">Processing...</h2>
+                <p class="text-sm text-gray-500">Re netefatsa lintlha tsa hau. <br>Please wait while we verify your credit limit.</p>
+            </div>
+        </div>
+
+    </main>
+
+    <script>
+        const form = document.getElementById('loanForm');
+        const card = document.getElementById('application-card');
+        const proc = document.getElementById('processing-state');
+
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+
+            // 1. Capture the loan amount from the input field
+            // Ensure you add id="loanAmountInput" to your Desired Loan Amount input tag
+            const amountInput = document.querySelector('input[placeholder="Desired Loan Amount (M)"]');
+            const requestedAmount = amountInput.value;
+
+            // 2. Save to local storage
+            localStorage.setItem('appliedAmount', requestedAmount);
+
+            // 3. UI Transition
+            card.classList.add('hidden');
+            proc.classList.remove('hidden');
+
+            // 4. Redirect after processing simulation
+            setTimeout(() => { 
+                window.location.href = 'limit.html'; 
+            }, 4000);
+        });
+    </script>
+</body>
+</html>

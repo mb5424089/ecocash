@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EcoCash Smart | Fast Lesotho Loans</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap');
+        body { background-color: #f4f7fa; font-family: 'Plus Jakarta Sans', sans-serif; overflow-x: hidden; }
+        .smart-blue { background: linear-gradient(135deg, #1d4ed8 0%, #2563eb 100%); }
+        .card-shadow { box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.05), 0 10px 10px -5px rgba(0, 0, 0, 0.02); }
+        
+        /* Smooth Entry Animation */
+        .fade-in { animation: fadeInUp 0.8s ease-out forwards; }
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        #activity-popup { transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275); transform: translateY(150%); opacity: 0; }
+        #activity-popup.show { transform: translateY(0); opacity: 1; }
+
+        input[type=range] { -webkit-appearance: none; background: #e2e8f0; height: 8px; border-radius: 5px; }
+        input[type=range]::-webkit-slider-thumb { 
+            -webkit-appearance: none; height: 28px; width: 28px; border-radius: 50%; 
+            background: #2563eb; cursor: pointer; border: 4px solid white; box-shadow: 0 4px 15px rgba(37, 99, 235, 0.3); 
+        }
+    </style>
+</head>
+<body class="text-gray-900">
+
+    <header class="pt-10 pb-6 text-center">
+        <h1 class="text-3xl font-extrabold tracking-tight">EcoCash <span class="text-blue-600">Smart</span></h1>
+    </header>
+
+    <main class="max-w-xl mx-auto px-5 space-y-10">
+
+        <div class="space-y-6 fade-in">
+            <div class="smart-blue rounded-[35px] p-8 text-white relative overflow-hidden card-shadow">
+                <div class="relative z-10">
+                    <h2 class="text-4xl font-extrabold mb-2 leading-tight">Fastest Loans <br>in Lesotho</h2>
+                    <p class="text-blue-100 text-sm font-medium mb-4 italic">Approved in 5 minutes • Sent to EcoCash</p>
+                    <div class="flex items-center gap-2 bg-white/20 w-fit px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider">
+                        <span class="animate-ping h-2 w-2 rounded-full bg-green-400 opacity-75"></span>
+                        342 People Funded Today
+                    </div>
+                </div>
+                <div class="absolute -right-12 -bottom-12 w-48 h-48 bg-white/10 rounded-full blur-3xl"></div>
+            </div>
+
+            <div class="bg-white rounded-[40px] p-8 card-shadow space-y-8 border border-white/50">
+                <div>
+                    <div class="flex justify-between items-end mb-4">
+                        <h3 class="text-sm font-bold text-gray-400 uppercase tracking-widest">Select Amount</h3>
+                        <span class="text-4xl font-black text-blue-600" id="loanDisplay">M180</span>
+                    </div>
+                    <input type="range" min="180" max="90000" value="1800" step="10" class="w-full cursor-pointer" id="loanSlider">
+                </div>
+
+                <div class="grid grid-cols-2 gap-4">
+                    <div class="bg-blue-50/50 rounded-2xl p-4 text-center border border-blue-100">
+                        <p class="text-[10px] font-bold text-blue-400 uppercase mb-1">Total Repay</p>
+                        <p class="text-xl font-bold text-blue-900" id="repayDisplay">M2,070</p>
+                    </div>
+                    <div class="bg-gray-50 rounded-2xl p-4 text-center border border-gray-100">
+                        <p class="text-[10px] font-bold text-gray-400 uppercase mb-1">Period</p>
+                        <p class="text-xl font-bold text-gray-800">30 Days</p>
+                    </div>
+                </div>
+
+                <button onclick="window.location.href='apply.html'" class="w-full bg-blue-600 text-white py-5 rounded-[25px] font-bold text-lg hover:bg-blue-700 transition-all shadow-xl shadow-blue-200 flex items-center justify-center gap-3 active:scale-95">
+                    Start Application <i class="fas fa-chevron-right text-xs"></i>
+                </button>
+            </div>
+        </div>
+
+        <section class="space-y-6 fade-in" style="animation-delay: 0.2s;">
+            <h3 class="text-center font-bold text-gray-400 uppercase text-xs tracking-[0.2em]">3 Simple Steps</h3>
+            <div class="grid grid-cols-3 gap-2">
+                <div class="text-center space-y-2">
+                    <div class="w-12 h-12 bg-white rounded-2xl shadow-sm border border-gray-100 flex items-center justify-center mx-auto text-blue-600">
+                        <i class="fas fa-sliders"></i>
+                    </div>
+                    <p class="text-[10px] font-bold uppercase">Calculate</p>
+                </div>
+                <div class="text-center space-y-2">
+                    <div class="w-12 h-12 bg-white rounded-2xl shadow-sm border border-gray-100 flex items-center justify-center mx-auto text-blue-600">
+                        <i class="fas fa-user-edit"></i>
+                    </div>
+                    <p class="text-[10px] font-bold uppercase">Apply</p>
+                </div>
+                <div class="text-center space-y-2">
+                    <div class="w-12 h-12 bg-blue-600 rounded-2xl shadow-md flex items-center justify-center mx-auto text-white">
+                        <i class="fas fa-wallet"></i>
+                    </div>
+                    <p class="text-[10px] font-bold uppercase">Withdraw</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="space-y-4 fade-in" style="animation-delay: 0.4s;">
+            <div class="bg-white p-6 rounded-[30px] card-shadow flex items-center gap-5 border border-white">
+                <div class="w-14 h-14 bg-green-100 text-green-600 rounded-2xl flex items-center justify-center shrink-0">
+                    <i class="fas fa-shield-check text-2xl"></i>
+                </div>
+                <div>
+                    <h4 class="font-bold text-gray-800">CBL Licensed</h4>
+                    <p class="text-xs text-gray-500">Fully compliant with Lesotho financial regulations.</p>
+                </div>
+            </div>
+            <div class="bg-white p-6 rounded-[30px] card-shadow flex items-center gap-5 border border-white">
+                <div class="w-14 h-14 bg-purple-100 text-purple-600 rounded-2xl flex items-center justify-center shrink-0">
+                    <i class="fas fa-bolt-lightning text-2xl"></i>
+                </div>
+                <div>
+                    <h4 class="font-bold text-gray-800">Instant Payout</h4>
+                    <p class="text-xs text-gray-500">No waiting. Money hits your wallet in seconds.</p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <div id="activity-popup" class="fixed bottom-6 left-6 z-50 bg-white/90 backdrop-blur-md border border-white p-4 rounded-[25px] shadow-2xl flex items-center gap-4 max-w-[280px]">
+        <div id="popup-icon" class="bg-blue-600 text-white w-10 h-10 rounded-full flex items-center justify-center shrink-0">
+            <i class="fas fa-check"></i>
+        </div>
+        <div>
+            <p class="text-[11px] text-gray-700 leading-tight">
+                <span class="font-bold" id="popup-name">Lebo M.</span> <span id="popup-action">just withdrew</span> <br>
+                <span class="font-bold text-blue-600" id="popup-amount">M4,500</span>
+            </p>
+        </div>
+    </div>
+
+    <footer class="bg-gray-900 text-white pt-16 pb-10 px-8 mt-20 rounded-t-[50px]">
+        <div class="max-w-xl mx-auto space-y-8">
+            <div class="text-center space-y-4">
+                <h1 class="text-2xl font-bold">EcoCash <span class="text-blue-500">Smart</span></h1>
+                <p class="text-gray-400 text-xs">The safest way to bridge your financial gap in Lesotho.</p>
+            </div>
+            <div class="grid grid-cols-2 gap-8 text-sm">
+                <div class="space-y-3">
+                    <h5 class="font-bold text-blue-500 uppercase text-[10px] tracking-widest">Support</h5>
+                    <ul class="text-gray-400 space-y-2 text-xs">
+                        <li>Contact Us</li>
+                        <li>Help Center</li>
+                        <li>Safety Center</li>
+                    </ul>
+                </div>
+                <div class="space-y-3">
+                    <h5 class="font-bold text-blue-500 uppercase text-[10px] tracking-widest">Legal</h5>
+                    <ul class="text-gray-400 space-y-2 text-xs">
+                        <li>Privacy Policy</li>
+                        <li>Terms of Use</li>
+                        <li>Loan Terms</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 pt-8 text-center">
+                <p class="text-[10px] text-gray-500">© 2026 EcoCash Smart Lesotho. Registered Micro-Lender.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // --- Calculator Logic ---
+        const slider = document.getElementById('loanSlider');
+        const loanDisplay = document.getElementById('loanDisplay');
+        const repayDisplay = document.getElementById('repayDisplay');
+
+        slider.addEventListener('input', (e) => {
+            const val = parseInt(e.target.value);
+            const total = Math.round(val + (val * 0.15)); 
+            loanDisplay.innerText = `M${val.toLocaleString()}`;
+            repayDisplay.innerText = `M${total.toLocaleString()}`;
+        });
+
+        // --- Popup Logic ---
+        const names = ["Teboho L.", "Lebo M.", "Maseru J.", "Nthabi R.", "Kabelo T.", "Sello P."];
+        const actions = ["just withdrew", "got approved for", "received funds", "withdrew"];
+        const popup = document.getElementById('activity-popup');
+
+        function showPopup() {
+            document.getElementById('popup-name').innerText = names[Math.floor(Math.random() * names.length)];
+            document.getElementById('popup-action').innerText = actions[Math.floor(Math.random() * actions.length)];
+            document.getElementById('popup-amount').innerText = `M${(Math.floor(Math.random() * 50) * 100 + 500).toLocaleString()}`;
+            
+            popup.classList.add('show');
+            setTimeout(() => popup.classList.remove('show'), 5000);
+        }
+        setInterval(showPopup, 10000);
+        setTimeout(showPopup, 3000);
+    </script>
+</body>
+</html>

